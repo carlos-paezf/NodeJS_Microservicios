@@ -15,15 +15,15 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/carlos-paezf/NodeJS_Microservicios_Hydra.git"
+        "url": "git+https://github.com/carlos-paezf/NodeJS_Microservicios.git"
     },
     "keywords": [],
     "author": "https://github.com/carlos-paezf",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/carlos-paezf/NodeJS_Microservicios_Hydra/issues"
+        "url": "https://github.com/carlos-paezf/NodeJS_Microservicios/issues"
     },
-    "homepage": "https://github.com/carlos-paezf/NodeJS_Microservicios_Hydra#readme",
+    "homepage": "https://github.com/carlos-paezf/NodeJS_Microservicios#readme",
     "dependencies": {
         "fwsp-config": "1.1.5",
         "hydra-express": "1.9.4",
