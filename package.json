@@ -1,0 +1,38 @@
+{
+    "name": "nodejs_microservicios_hydra",
+    "version": "1.0.0",
+    "description": "Microservicios en NodeJS con Hydra",
+    "main": "index.js",
+    "private": true,
+    "scripts": {
+        "start": "node tutorial-service.js",
+        "debug": "node-debug tutorial-service.js --debug-brk",
+        "test": "mocha specs --reporter spec",
+        "docker": "node scripts/docker.js"
+    },
+    "engines": {
+        "node": ">=6.2.1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/carlos-paezf/NodeJS_Microservicios_Hydra.git"
+    },
+    "keywords": [],
+    "author": "https://github.com/carlos-paezf",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/carlos-paezf/NodeJS_Microservicios_Hydra/issues"
+    },
+    "homepage": "https://github.com/carlos-paezf/NodeJS_Microservicios_Hydra#readme",
+    "dependencies": {
+        "fwsp-config": "1.1.5",
+        "hydra-express": "1.9.4",
+        "fwsp-server-response": "2.2.6"
+    },
+    "devDependencies": {
+        "chai": "3.5.0",
+        "eslint": "3.16.0",
+        "mocha": "3.2.0",
+        "superagent": "3.5.2"
+    }
+}

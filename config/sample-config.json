@@ -1,0 +1,15 @@
+{
+    "environment": "development",
+    "hydra": {
+        "serviceName": "tutorial-service",
+        "serviceIP": "",
+        "servicePort": 0,
+        "serviceType": "tutorial",
+        "serviceDescription": "",
+        "redis": {
+            "url": "127.0.0.1",
+            "port": 6379,
+            "db": 15
+        }
+    }
+}
