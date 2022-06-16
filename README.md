@@ -24,3 +24,4 @@ time pnpm i express -S
 ## Documentación
 
 - [Crear Microservicio con Hydra](DOC/01_Crear_Microservicio_con_Hydra.md)
+- [Crear aplicación base](DOC/02_Crear_Aplicacion_Base.md)
