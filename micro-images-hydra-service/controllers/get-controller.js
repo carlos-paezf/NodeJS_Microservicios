@@ -5,7 +5,7 @@ const sharp = require('sharp')
 
 const downloadCustomImage = (req, res) => {
     fs.access(req.localpath, fs.constants.R_OK, (error) => {
-        if (error) return res.status(404).end()
+        if (error) return res.sendError('Archivo no encontrado')
 
         let image = sharp(req.localpath)
         let width = +req.query.width

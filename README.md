@@ -32,3 +32,4 @@ time pnpm i express -S
 - [De parámetros de ruta a parámetros de consulta](DOC/07_De_parametros_de_ruta_a_parametros_de_consulta.md)
 - [Completar editor de imágenes](DOC/08_Completar_editor_imagenes.md)
 - [Reconvertir la aplicación a Hydra](DOC/09_Reconvertir_aplicacion_a_Hydra.md)
+- [Comparar App Express vs Microservicio Hydra](DOC/10_Comprar_App_Express_vs_Microservicio_Hydra.md)
