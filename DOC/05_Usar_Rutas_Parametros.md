@@ -128,4 +128,4 @@ Ahora tenemos podemos por ejemplo llamar las siguientes rutas desde el navegador
 ___
 | Anterior                                             |                        | Siguiente                      |
 | ---------------------------------------------------- | ---------------------- | ------------------------------ |
-| [Descarga de archivos](04_Descarga_Archivos.md) | [Readme](../README.md) | [Imágenes en escala de grises](07_Imagenes_escala_grises.md) |
+| [Descarga de archivos](04_Descarga_Archivos.md) | [Readme](../README.md) | [Imágenes en escala de grises](06_Imagenes_escala_grises.md) |
