@@ -33,3 +33,4 @@ time pnpm i express -S
 - [Completar editor de imágenes](DOC/08_Completar_editor_imagenes.md)
 - [Reconvertir la aplicación a Hydra](DOC/09_Reconvertir_aplicacion_a_Hydra.md)
 - [Comparar App Express vs Microservicio Hydra](DOC/10_Comprar_App_Express_vs_Microservicio_Hydra.md)
+- [Uso del framework Seneca](DOC/11_Uso_Framework_Seneca.md)

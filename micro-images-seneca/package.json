@@ -1,0 +1,29 @@
+{
+    "name": "micro-images-seneca",
+    "version": "1.0.0",
+    "description": "Microservicio de imágenes con Seneca",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node micro-images-seneca.js",
+        "start:dev": "nodemon micro-images-seneca.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/carlos-paezf/NodeJS_Microservicios.git"
+    },
+    "keywords": [],
+    "author": "https://github.com/carlos-paezf",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/carlos-paezf/NodeJS_Microservicios/issues"
+    },
+    "homepage": "https://github.com/carlos-paezf/NodeJS_Microservicios#readme",
+    "dependencies": {
+        "seneca": "^3.28.0"
+    },
+    "devDependencies": {
+        "morgan": "^1.10.0",
+        "nodemon": "^2.0.16"
+    }
+}
