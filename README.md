@@ -30,3 +30,4 @@ time pnpm i express -S
 - [Usar rutas con parámetros](DOC/05_Usar_Rutas_Parametros.md)
 - [Imágenes en escala de grises](DOC/06_Imagenes_escala_grises.md)
 - [De parámetros de ruta a parámetros de consulta](DOC/07_De_parametros_de_ruta_a_parametros_de_consulta.md)
+- [Completar editor de imágenes](DOC/08_Completar_editor_imagenes.md)
