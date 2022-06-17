@@ -1,4 +1,6 @@
 const sharp = require('sharp')
+const path = require('path')
+const fs = require('fs')
 
 
 const getThumbnail = (req, res) => {
@@ -55,4 +57,33 @@ const getThumbnail = (req, res) => {
 }
 
 
-module.exports = getThumbnail
+const downloadImage = (req, res) => {
+    let ext = path.extname(req.params.image)
+
+    if (!ext.match(/^\.(png|jpg)$/)) return res.status(404).end()
+
+    let fileDirectory = fs.createReadStream(path.join(__dirname, '/../uploads', req.params.image))
+
+    fileDirectory.on('error', (error) => {
+        if (error.code == 'ENOENT') {
+            res.status(404)
+
+            if (req.accepts('html')) {
+                res.setHeader('Content-Type', 'text/html')
+
+                res.write('<strong>Error:</strong> imagen no encontrada')
+            }
+
+            return res.end()
+        }
+
+        return res.status(500).end()
+    })
+
+    res.setHeader('Content-Type', 'image/' + ext.substring(1))
+
+    fileDirectory.pipe(res)
+}
+
+
+module.exports = { getThumbnail, downloadImage }
