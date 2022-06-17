@@ -109,6 +109,8 @@ const downloadCustomImage = (req, res) => {
 
         if (req.width || req.height) image.resize(req.width, req.height)
 
+        if (req.greyscale) image.greyscale()
+
         res.setHeader('Content-Type', 'image/' + path.extname(req.image).substring(1))
 
         image.pipe(res)

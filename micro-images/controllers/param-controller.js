@@ -13,4 +13,25 @@ const validateImage = (req, res, next, image) => {
 }
 
 
-module.exports = { validateImage }
+const widthParam = (req, res, next, width) => {
+    req.width = +width
+    return next()
+}
+
+
+const heightParam = (req, res, next, height) => {
+    req.height = +height
+    return next()
+}
+
+
+const greyscaleParam = (req, res, next, greyscale) => {
+    if (greyscale !== 'bw') return next('route')
+
+    req.greyscale = true
+
+    return next()
+}
+
+
+module.exports = { validateImage, widthParam, heightParam, greyscaleParam }

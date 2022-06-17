@@ -28,3 +28,4 @@ time pnpm i express -S
 - [Subir imágenes al microservicio](DOC/03_Subir_imagenes_al_microservicio.md)
 - [Descarga de archivos](DOC/04_Descarga_Archivos.md)
 - [Usar rutas con parámetros](DOC/05_Usar_Rutas_Parametros.md)
+- [Imágenes en escala de grises](DOC/06_Imagenes_escala_grises.md)
