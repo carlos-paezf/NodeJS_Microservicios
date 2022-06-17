@@ -56,8 +56,7 @@ const getThumbnail = (req, res) => {
     }]).toFormat(format).pipe(res)
 }
 
-
-const downloadImage = (req, res) => {
+/* const downloadImage = (req, res) => {
     let ext = path.extname(req.params.image)
 
     if (!ext.match(/^\.(png|jpg)$/)) return res.status(404).end()
@@ -83,7 +82,38 @@ const downloadImage = (req, res) => {
     res.setHeader('Content-Type', 'image/' + ext.substring(1))
 
     fileDirectory.pipe(res)
+} */
+
+const downloadImage = (req, res) => {
+    let fileDirectory = fs.createReadStream(req.localpath)
+
+    fileDirectory.on('error', (error) => {
+        res.status(error.code === 'ENOENT' ? 404 : 500).end()
+    })
+
+    res.setHeader('Content-Type', 'image/' + path.extname(req.image).substring(1))
+
+    fileDirectory.pipe(res)
 }
 
 
-module.exports = { getThumbnail, downloadImage }
+const downloadCustomImage = (req, res) => {
+    fs.access(req.localpath, fs.constants.R_OK, (error) => {
+        if (error) return res.status(404).end()
+
+        let image = sharp(req.localpath)
+
+        if (req.width && req.height) image.resize(req.width, req.height, {
+            fit: 'fill'
+        })
+
+        if (req.width || req.height) image.resize(req.width, req.height)
+
+        res.setHeader('Content-Type', 'image/' + path.extname(req.image).substring(1))
+
+        image.pipe(res)
+    })
+}
+
+
+module.exports = { getThumbnail, downloadImage, downloadCustomImage }
