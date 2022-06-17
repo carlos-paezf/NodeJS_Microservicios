@@ -56,6 +56,7 @@ const getThumbnail = (req, res) => {
     }]).toFormat(format).pipe(res)
 }
 
+
 /* const downloadImage = (req, res) => {
     let ext = path.extname(req.params.image)
 
@@ -84,6 +85,7 @@ const getThumbnail = (req, res) => {
     fileDirectory.pipe(res)
 } */
 
+
 const downloadImage = (req, res) => {
     let fileDirectory = fs.createReadStream(req.localpath)
 
@@ -97,7 +99,7 @@ const downloadImage = (req, res) => {
 }
 
 
-const downloadCustomImage = (req, res) => {
+/* const downloadCustomImage = (req, res) => {
     fs.access(req.localpath, fs.constants.R_OK, (error) => {
         if (error) return res.status(404).end()
 
@@ -110,6 +112,28 @@ const downloadCustomImage = (req, res) => {
         if (req.width || req.height) image.resize(req.width, req.height)
 
         if (req.greyscale) image.greyscale()
+
+        res.setHeader('Content-Type', 'image/' + path.extname(req.image).substring(1))
+
+        image.pipe(res)
+    })
+} */
+
+
+const downloadCustomImage = (req, res) => {
+    fs.access(req.localpath, fs.constants.R_OK, (error) => {
+        if (error) return res.status(404).end()
+
+        let image = sharp(req.localpath)
+        let width = +req.query.width
+        let height = +req.query.height
+        let greyscale = ['y', 'yes', '1', 'on'].includes(req.query.greyscale)
+
+        if (width && height) image.resize(width, height, { fit: 'fill' })
+
+        if (width || height) image.resize(width || null, height || null)
+
+        if (greyscale) image.greyscale()
 
         res.setHeader('Content-Type', 'image/' + path.extname(req.image).substring(1))
 
